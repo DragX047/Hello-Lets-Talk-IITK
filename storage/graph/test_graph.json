@@ -1,0 +1,93 @@
+{
+  "course_id": "MTH441",
+  "summary": {
+    "total_nodes": 5,
+    "total_edges": 4,
+    "node_types": {
+      "course": 1,
+      "lecture": 1,
+      "topic": 1,
+      "chunk": 1,
+      "equation": 1
+    },
+    "edge_relations": {
+      "CONTAINS_LECTURE": 1,
+      "COVERS_TOPIC": 1,
+      "HAS_CHUNK": 1,
+      "REFERENCES_EQUATION": 1
+    }
+  },
+  "nodes": [
+    {
+      "node_type": "course",
+      "id": "COURSE_MTH441",
+      "course_id": "MTH441",
+      "name": "Regression Analysis",
+      "instructor": "Prof. Shalabh",
+      "institution": "IIT Kanpur",
+      "description": ""
+    },
+    {
+      "node_type": "lecture",
+      "id": "MTH441_L01",
+      "course_id": "MTH441",
+      "lecture_num": 1,
+      "title": "Introduction",
+      "source_file": "lecture01.pdf",
+      "chapter": 1,
+      "description": ""
+    },
+    {
+      "node_type": "topic",
+      "id": "MTH441_L01_T01",
+      "lecture_id": "MTH441_L01",
+      "title": "Chi-Square",
+      "description": ""
+    },
+    {
+      "node_type": "chunk",
+      "id": "c1",
+      "lecture_id": "MTH441_L01",
+      "page": 9,
+      "chunk_num": 1,
+      "text": "text",
+      "source": "lec01.pdf",
+      "topic_id": "MTH441_L01_T01",
+      "char_count": 4
+    },
+    {
+      "node_type": "equation",
+      "id": "eq1",
+      "name": "Chi-Square PDF",
+      "latex": "f(x)=...",
+      "variables": [],
+      "conditions": "",
+      "lecture_id": "MTH441_L01",
+      "page": 9,
+      "topic": "",
+      "description": ""
+    }
+  ],
+  "edges": [
+    {
+      "relation": "CONTAINS_LECTURE",
+      "source": "COURSE_MTH441",
+      "target": "MTH441_L01"
+    },
+    {
+      "relation": "COVERS_TOPIC",
+      "source": "MTH441_L01",
+      "target": "MTH441_L01_T01"
+    },
+    {
+      "relation": "HAS_CHUNK",
+      "source": "MTH441_L01_T01",
+      "target": "c1"
+    },
+    {
+      "relation": "REFERENCES_EQUATION",
+      "source": "c1",
+      "target": "eq1"
+    }
+  ]
+}
