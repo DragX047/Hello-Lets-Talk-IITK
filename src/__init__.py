@@ -1,4 +1,4 @@
-"""ZombAI V2 - Multi-Lecture Graph-RAG Pipeline with Local LLM (Llama 3.1 8B)."""
+"""Hello Lets Talk IITK (V2) - Multi-Lecture Graph-RAG Pipeline with Local LLM (Llama 3.1 8B)."""
 
 from .extractor import extract_pdf
 from .cleaner import clean_page_text, clean_pages

@@ -1,4 +1,4 @@
-"""End-to-end acceptance test for ZombAI V1 pipeline."""
+"""End-to-end acceptance test for Hello Lets Talk IITK pipeline."""
 
 import sys
 from pathlib import Path
@@ -43,7 +43,7 @@ def run_test():
     assert embeddings.shape == (len(chunks), 384), f"Shape mismatch: {embeddings.shape}"
 
     print("\n=== 5. Persistent ChromaDB Storage ===")
-    vs = VectorStore(persist_dir="storage/chroma", collection_name="zombai_e2e_test_collection")
+    vs = VectorStore(persist_dir="storage/chroma", collection_name="hello_lets_talk_iitk_e2e_test_collection")
     vs.reset_collection()
     added = vs.add_chunks(chunks, embeddings)
     print(f"Upserted {added} chunks. Collection count = {vs.count()}")

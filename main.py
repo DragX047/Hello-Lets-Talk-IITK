@@ -1,4 +1,4 @@
-"""ZombAI V2 - Multi-Lecture Graph-RAG System CLI & Entrypoint.
+"""Hello Lets Talk IITK (V2) - Multi-Lecture Graph-RAG System CLI & Entrypoint.
 
 Provides CLI interfaces for:
 - Batch course ingestion (multi-lecture PDF extraction, chunking, embedding, graph construction)
@@ -34,7 +34,7 @@ def run_ingest(
     """Run batch multi-lecture ingestion and build knowledge graph."""
     target_dir = lectures_dir or f"data/lectures/{course}"
     print("=" * 65)
-    print(f" ZombAI V2 - Ingesting Course: {course}")
+    print(f" Hello Lets Talk IITK - Ingesting Course: {course}")
     print(f" Source Directory: {target_dir}")
     print("=" * 65)
 
@@ -71,7 +71,7 @@ def run_graph_query(query: str, top_k: int = 5, course: Optional[str] = None):
     result = graph_retriever.retrieve(query=query, top_k=top_k, course_filter=course)
 
     print("=" * 65)
-    print(f" ZombAI V2 - Hybrid Graph-RAG Retrieval: '{query}'" + (f" [Course: {course}]" if course else ""))
+    print(f" Hello Lets Talk IITK - Hybrid Graph-RAG Retrieval: '{query}'" + (f" [Course: {course}]" if course else ""))
     print("=" * 65)
 
     print(f"\n[Retrieved Text Chunks ({len(result['chunks'])})]:")
@@ -117,7 +117,7 @@ def run_graph_info(course: str = "MTH441", graph_path: Optional[str] = None):
     cg = CourseGraph.load_json(target_path)
     summary = cg.summary()
     print("=" * 65)
-    print(f" ZombAI V2 - Knowledge Graph Structure ({cg.course_id})")
+    print(f" Hello Lets Talk IITK - Knowledge Graph Structure ({cg.course_id})")
     print(f" Path: {target_path}")
     print("=" * 65)
     print(f" Total Nodes: {summary['total_nodes']}")
@@ -142,11 +142,11 @@ def interactive_chat(
 
     if single_query:
         print(f"\n[Student Question]: {single_query}" + (f" [Course: {course}]" if course else ""))
-        print("\n[ZombAI Thinking & Traversal...]")
+        print("\n[Hello Lets Talk IITK Thinking & Traversal...]")
         response = graph_retriever.ask(query=single_query, top_k=top_k, course_filter=course)
 
         print("\n" + "=" * 68)
-        print("[ZombAI TA Answer]:")
+        print("[Hello Lets Talk IITK TA Answer]:")
         print(response["answer"])
         print("-" * 68)
 
@@ -162,7 +162,7 @@ def interactive_chat(
 
     course_label = course or "IIT Kanpur Courses (MTH441 / CS771 / EE602)"
     print("=" * 68)
-    print(" ZombAI V2 - Teaching Assistant Interactive Shell (Llama 3.1 8B)")
+    print(" Hello Lets Talk IITK - Teaching Assistant Interactive Shell (Llama 3.1 8B)")
     print(f" Grounded on {course_label}")
     print(" Powered by ChromaDB + Multi-Course Knowledge Graph + Local Ollama (llama3.1:8b)")
     print(" Type your academic question or 'exit' / 'q' to quit.")
@@ -177,11 +177,11 @@ def interactive_chat(
                 print("Session closed. Happy studying!")
                 break
 
-            print("\n[ZombAI Thinking & Traversal...]")
+            print("\n[Hello Lets Talk IITK Thinking & Traversal...]")
             response = graph_retriever.ask(query=query, top_k=top_k, course_filter=course)
 
             print("\n" + "=" * 68)
-            print("[ZombAI TA Answer]:")
+            print("[Hello Lets Talk IITK TA Answer]:")
             print(response["answer"])
             print("-" * 68)
 
@@ -202,7 +202,7 @@ def interactive_chat(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="ZombAI V2 Multi-Lecture Graph-RAG System")
+    parser = argparse.ArgumentParser(description="Hello Lets Talk IITK (V2) Multi-Lecture Graph-RAG System")
     subparsers = parser.add_subparsers(dest="command", help="Command to execute")
 
     # Ingest command

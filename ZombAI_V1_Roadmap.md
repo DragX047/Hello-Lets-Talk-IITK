@@ -1,4 +1,4 @@
-# ZombAI V1 --- Complete Roadmap from Scratch
+# Hello Lets Talk IITK (V1) --- Complete Roadmap from Scratch
 
 ## PDF-to-RAG Search and Retrieval Pipeline
 
@@ -56,7 +56,7 @@ Persistent ChromaDB
 Suggested structure:
 
 ``` text
-ZombAI/
+Hello-Lets-Talk-IITK/
 ├── data/
 │   ├── raw/
 │   └── processed/
@@ -101,8 +101,8 @@ For a new project:
 
 ``` powershell
 cd D:\Placement
-mkdir ZombAI
-cd ZombAI
+mkdir Hello-Lets-Talk-IITK
+cd Hello-Lets-Talk-IITK
 mkdir data
 mkdir data\raw
 mkdir data\processed
@@ -353,7 +353,7 @@ vectors from different models are not interchangeable.
 
 Create `src/vector_store.py`. Use a persistent local directory such as
 `storage/chroma/` and a named collection such as
-`zombai_lecture_chunks_v1`.
+`hello_lets_talk_iitk_chunks_v1`.
 
 Each record needs: - **ID:** unique chunk ID, ideally derived from
 source/lecture/page/chunk. - **Document:** chunk text. - **Embedding:**

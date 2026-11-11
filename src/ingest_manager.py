@@ -729,7 +729,7 @@ class IngestManager:
         instructor: Optional[str] = None,
         institution: Optional[str] = None,
         persist_dir: str = "storage/chroma",
-        collection_name: str = "zombai_lecture_chunks_v1",
+        collection_name: str = "hello_lets_talk_iitk_chunks_v1",
         graph_path: Optional[str] = None,
         embedder: Optional[Embedder] = None,
         equation_store: Optional[EquationStore] = None,

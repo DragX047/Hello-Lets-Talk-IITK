@@ -1,6 +1,6 @@
-# ZombAI V1 — Local PDF-to-RAG Search and Retrieval Pipeline
+# Hello Lets Talk IITK — Local PDF-to-RAG Search and Retrieval Pipeline
 
-ZombAI V1 is a modular, local search and retrieval baseline built for academic lecture notes (specifically tested on IITK MTH441 - Regression Analysis). It extracts lecture PDFs, normalizes mathematical symbols, removes recurring slide footers, chunks text with metadata, computes 384-dimensional dense embeddings (`all-MiniLM-L6-v2`), stores them persistently in ChromaDB, and retrieves relevant evidence with citations and formatted LLM context.
+Hello Lets Talk IITK is a modular, local search and retrieval pipeline built for academic lecture notes and textbooks at IIT Kanpur (including MTH441 - Regression Analysis, CS771 - Machine Learning, and EE602 - Estimation Theory). It extracts lecture PDFs, normalizes mathematical symbols, removes recurring slide footers, chunks text with metadata, computes 384-dimensional dense embeddings (`all-MiniLM-L6-v2`), stores them persistently in ChromaDB, and retrieves relevant evidence with citations, knowledge graph traversal, and formatted LLM context.
 
 ---
 
@@ -26,7 +26,9 @@ Hello-Lets-Talk-IITK/
 ├── main.ipynb                  # Interactive walkthrough notebook with CLI interface
 ├── main.py                     # CLI entrypoint for ingestion and querying
 ├── requirements.txt            # Project dependencies
-└── ZombAI_V1_Roadmap.md        # Comprehensive V1 specification and roadmap
+├── V1.md                       # V1 implementation record and changelog
+├── V2.md                       # V2 Graph-RAG technical design & system architecture
+└── Roadmap_V1.md               # Comprehensive V1 specification and roadmap
 ```
 
 ---

@@ -17,7 +17,7 @@ class VectorStore:
     def __init__(
         self,
         persist_dir: str = "storage/chroma",
-        collection_name: str = "zombai_lecture_chunks_v1",
+        collection_name: str = "hello_lets_talk_iitk_chunks_v1",
     ):
         """Initialize ChromaDB client and retrieve or create collection.
 
@@ -49,6 +49,15 @@ class VectorStore:
             path=self.persist_dir,
             settings=Settings(anonymized_telemetry=False),
         )
+        # Migrate legacy collection if present
+        existing_cols = [c.name for c in self.client.list_collections()]
+        if self.collection_name not in existing_cols and "zombai_lecture_chunks_v1" in existing_cols:
+            try:
+                legacy_col = self.client.get_collection("zombai_lecture_chunks_v1")
+                legacy_col.modify(name=self.collection_name)
+            except Exception:
+                pass
+
         self.collection = self.client.get_or_create_collection(
             name=self.collection_name,
             metadata={"hnsw:space": "cosine"},

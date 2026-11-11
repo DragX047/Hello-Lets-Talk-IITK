@@ -1,4 +1,4 @@
-"""Embedding module for ZombAI V1.
+"""Embedding module for Hello Lets Talk IITK.
 
 Generates 384-dimensional dense vector embeddings using all-MiniLM-L6-v2.
 Supports both SentenceTransformer and ChromaDB's ONNX-based all-MiniLM-L6-v2

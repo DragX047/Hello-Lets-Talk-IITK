@@ -1,4 +1,4 @@
-"""Unit and Integration Test Suite for ZombAI V2.
+"""Unit and Integration Test Suite for Hello Lets Talk IITK (V2).
 
 Tests:
 1. CourseGraph CRUD, edge traversal, and JSON serialization.
@@ -29,7 +29,7 @@ from src.generator import LLMGenerator
 from src.embedder import Embedder
 
 
-class TestZombAIV2(unittest.TestCase):
+class TestHelloLetsTalkIITKV2(unittest.TestCase):
     """Test suite covering V2 components."""
 
     def test_course_graph_crud_and_serialization(self):
